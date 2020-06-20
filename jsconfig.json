@@ -4,8 +4,5 @@
     "paths": {
       "~/*": ["*"]
     }
-    
-  },
-  "emmet.syntaxProfile" :{ "javascript": "jsx"},
-  "emmet.includeLanguages":{"javascript": "jsx"},
+  }
 }

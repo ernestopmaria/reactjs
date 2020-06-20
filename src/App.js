@@ -2,12 +2,6 @@ import React,{useState ,useEffect} from "react";
 import api from './services/api';
 import "./styles.css";
 
-import Header from './components/Header';
-
-
-
-
-
 
 function App() {
   const[ repositories, setRepository ] = useState([]);
@@ -31,7 +25,7 @@ function App() {
     const repository = response.data;
     console.log(repository)
     setRepository([...repositories, repository])
-  };
+  }
 
   async function handleRemoveRepository(id) {
     await api.delete(`/repositories/${id}`);
@@ -41,13 +35,9 @@ function App() {
     setRepository(filteredRepos);
   }
 
-
   return (
     <div>
-     <Header title ="Repositories"/>
-     
-     
-     <ul data-testid="repository-list">
+       <ul data-testid="repository-list">
         
         {repositories.map(repo => {
           return(
@@ -62,8 +52,8 @@ function App() {
 
     </ul>
 
-      <button onClick={handleAddRepository}type="button">Adicionar</button>
-      </div>
+    <button onClick={handleAddRepository}type="button">Adicionar</button>
+    </div>
   );
 }
 
